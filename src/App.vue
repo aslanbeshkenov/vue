@@ -1,19 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Calc></Calc>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Calc from './components/Calc.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Calc,
   },
-};
+  data() {
+    return {
+      counter: 0,
+      str: 'hi',
+    }
+  },
+  methods: {
+    sum(step, event) {
+      console.log(event)
+      this.counter += step
+    },
+  },
+}
 </script>
 
 <style lang="scss">
